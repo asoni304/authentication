@@ -1,3 +1,4 @@
+import 'package:auth/Screens/forgot_password.dart';
 import 'package:auth/Screens/otp_verify.dart';
 import 'package:auth/Screens/sign_up.dart';
 import 'package:flutter/cupertino.dart';
@@ -81,8 +82,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
-                        const InkWell(
-                          child: Padding(
+                         InkWell(
+                           onTap: (){
+                             Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ForgotPassword()));
+                           },
+                          child: const Padding(
                             padding: EdgeInsets.only(top: 13.0),
                             child: Align(
                                 alignment: Alignment.bottomRight,
@@ -99,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   InkWell(
                     onTap: (){
                       _formKey.currentState!.validate();
-                      Navigator.push(context, MaterialPageRoute(builder: (builder)=>const OtpVerify()));
+                     // Navigator.push(context, MaterialPageRoute(builder: (builder)=>const OtpVerify()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),

@@ -1,4 +1,5 @@
 import 'package:auth/Screens/login_screen.dart';
+import 'package:auth/Screens/otp_verify.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -97,21 +98,26 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                   const SizedBox(height: 60,),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    child: Center(
-                      child: Container(
-                        height: 60,
-                        width: MediaQuery.of(context).size.width-150,
-                        color: Colors.transparent,
-                        child:   Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (builder)=>const OtpVerify()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20.0),
+                      child: Center(
+                        child: Container(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width-150,
+                          color: Colors.transparent,
+                          child:   Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
 
-                          elevation: 5,
-                          color: Colors.indigo,
-                          child: const Center(child: Text('Sign Up',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 23),)),
+                            elevation: 5,
+                            color: Colors.indigo,
+                            child: const Center(child: Text('Sign Up',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 23),)),
+                          ),
                         ),
                       ),
                     ),
