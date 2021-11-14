@@ -11,6 +11,11 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey <FormState>();
+  final TextEditingController _emailController= TextEditingController();
+  final TextEditingController _passwordController= TextEditingController();
+  final TextEditingController _passwordConfirmController= TextEditingController();
+  final TextEditingController _firstNameController= TextEditingController();
+  final TextEditingController _lastNameController= TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +44,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       children:  [
                         const Text('First Name',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                         TextFormField(
+                          keyboardType: TextInputType.text,
+                          controller: _firstNameController,
+                          validator:(value){
+                            if(_firstNameController.text.isEmpty){
+                              return 'This Field Can\'t be empty';
+                            }
+                          } ,
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             hintText: 'First Name',
@@ -51,6 +63,13 @@ class _SignupScreenState extends State<SignupScreen> {
                         Padding(
                           padding: const EdgeInsets.only(top: 13.0),
                           child: TextFormField(
+                            keyboardType: TextInputType.text,
+                            controller: _lastNameController,
+                            validator:(value){
+                              if(_lastNameController.text.isEmpty){
+                                return 'This Field Can\'t be empty';
+                              }
+                            } ,
                             style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                             decoration: const InputDecoration(
                               hintText: 'Last Name',
@@ -62,6 +81,13 @@ class _SignupScreenState extends State<SignupScreen> {
                         const SizedBox(height: 4,),
                         const Text('Email or Phone Number',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                         TextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          controller: _emailController,
+                          validator:(value){
+                            if(_emailController.text.isEmpty){
+                              return 'This Field Can\'t be empty';
+                            }
+                          } ,
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             hintText: 'Email or Phone Number',
@@ -73,6 +99,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
                         const Text('Password',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                         TextFormField(
+                          keyboardType: TextInputType.visiblePassword,
+                          controller: _passwordController,
+                          validator:(value){
+                            if(_passwordController.text.isEmpty){
+                              return 'This Field Can\'t be empty';
+                            }
+                          } ,
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             suffixIcon: Icon(Icons.seventeen_mp),
@@ -84,6 +117,13 @@ class _SignupScreenState extends State<SignupScreen> {
                         const SizedBox(height: 4,),
                         const Text('Confirm Password',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                         TextFormField(
+                          keyboardType: TextInputType.visiblePassword,
+                          controller: _passwordConfirmController,
+                          validator:(value){
+                            if(_passwordConfirmController.text.isEmpty){
+                              return 'This Field Can\'t be empty';
+                            }
+                          } ,
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             suffixIcon: Icon(Icons.seventeen_mp),
@@ -100,6 +140,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   const SizedBox(height: 60,),
                   InkWell(
                     onTap: (){
+                      _formKey.currentState!.validate();
                       Navigator.push(context,MaterialPageRoute(builder: (builder)=>const OtpVerify()));
                     },
                     child: Padding(
