@@ -13,6 +13,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(onPressed:(){
           Navigator.pop(context);
@@ -33,9 +34,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   padding: EdgeInsets.only(top: 13.0),
                   child: Text('Enter the 4-digit code sent to you at (407) 800-6404',style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal,color: Colors.grey)),
                 ),
-                const SizedBox(height:40),
+                 SizedBox(height:MediaQuery.of(context).size.height/19),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 60.0),
+                  padding: const EdgeInsets.only(bottom: 30.0),
                   child: Row(
                     children:  [
                       fieldNumber(),

@@ -27,21 +27,21 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
-                  const SizedBox(height: 40,),
+                   SizedBox(height: MediaQuery.of(context).size.height/16,),
                   const Icon(Icons.threed_rotation,size: 130,color: Colors.indigo,),
                   //SizedBox(height: 10,),
                   const Padding(
-                    padding: EdgeInsets.only(top: 20.0),
+                    padding: EdgeInsets.only(top: 10.0),
                     child: Text('Welcome back,',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold,),),
                   ),
                  // SizedBox(height: 10,),
                   const Padding(
-                    padding: EdgeInsets.only(top: 13.0),
+                    padding: EdgeInsets.only(top: 12.0),
                     child: Text('Sign in to continue',style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal,color: Colors.grey)),
                   ),
-                  const SizedBox(height: 50,),
+                   SizedBox(height: MediaQuery.of(context).size.height/19,),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30,right: 20),
+                    padding: const EdgeInsets.only(top: 10,right: 10),
                     child: Form(
                         key:_formKey,
                         child: Column(
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             hintText: 'Email or Phone Number',
-                            hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                            hintStyle: TextStyle(fontSize: 13,color: Colors.black,),
 
                           ),
                         ),
@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             decoration: const InputDecoration(
                                 hintText: 'Password',
-                                hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                                hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
                               suffixIcon: Icon(Icons.ten_k)
                             ),
                           ),
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                              Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ForgotPassword()));
                            },
                           child: const Padding(
-                            padding: EdgeInsets.only(top: 13.0),
+                            padding: EdgeInsets.only(top: 8.0),
                             child: Align(
                                 alignment: Alignment.bottomRight,
                                 child: Text('Forgot Password?',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold))),
@@ -99,14 +99,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     ),
                   ),
-                  const SizedBox(height: 80,),
+                   SizedBox(height: MediaQuery.of(context).size.height/15,),
                   InkWell(
                     onTap: (){
                       _formKey.currentState!.validate();
                      // Navigator.push(context, MaterialPageRoute(builder: (builder)=>const OtpVerify()));
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 20.0),
+                      padding: const EdgeInsets.only(bottom: 10.0),
                       child: Center(
                         child: Container(
                           height: 60,
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 25.0,bottom: 20),
+                    padding: const EdgeInsets.only(top: 15.0,bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children:  [

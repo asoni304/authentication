@@ -13,6 +13,7 @@ class _ResetScreenState extends State<ResetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(onPressed:(){
           Navigator.pop(context);
@@ -28,7 +29,7 @@ class _ResetScreenState extends State<ResetScreen> {
                   padding: EdgeInsets.only(top: 20.0),
                   child: Text('Reset Password',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold,),),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: MediaQuery.of(context).size.height/15,),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0,right: 10),
                   child: Form(
@@ -42,11 +43,11 @@ class _ResetScreenState extends State<ResetScreen> {
                         decoration: const InputDecoration(
                           suffixIcon: Icon(Icons.seventeen_mp),
                           hintText: 'New Password',
-                          hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                          hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                         ),
                       ),
-                      const SizedBox(height: 30,),
+                       SizedBox(height: MediaQuery.of(context).size.height/15,),
                       const Text('Confirm Password',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                       TextFormField(
                         keyboardType: TextInputType.visiblePassword,
@@ -54,7 +55,7 @@ class _ResetScreenState extends State<ResetScreen> {
                         decoration: const InputDecoration(
                           suffixIcon: Icon(Icons.seventeen_mp),
                           hintText: 'Confirm Password',
-                          hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                          hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                         ),
                       ),
@@ -62,7 +63,7 @@ class _ResetScreenState extends State<ResetScreen> {
                   ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height-500,),
+                SizedBox(height: MediaQuery.of(context).size.height/4,),
                 InkWell(
                   onTap: (){
                     //Navigator.push(context, MaterialPageRoute(builder: (builder)=>const ResetScreen()));

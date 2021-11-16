@@ -27,16 +27,16 @@ class _SignupScreenState extends State<SignupScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
                   const Padding(
-                    padding: EdgeInsets.only(top: 20.0),
+                    padding: EdgeInsets.only(top: 5.0),
                     child: Text('CreateAccount',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold,),),
                   ),
                    const Padding(
-                    padding: EdgeInsets.only(top: 13.0),
+                    padding: EdgeInsets.only(top: 5.0),
                     child: Text('Sign Up',style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal,color: Colors.grey)),
                   ),
-                  const SizedBox(height: 30,),
+                  SizedBox(height: MediaQuery.of(context).size.height/22,),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0,right: 10),
+                    padding: const EdgeInsets.only(top: 5.0,right: 10),
                     child: Form(
                         key:_formKey,
                         child: Column(
@@ -54,14 +54,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             hintText: 'First Name',
-                            hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                            hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                           ),
                         ),
                         const SizedBox(height: 4,),
                         const Text('Last Name',style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.bold)),
                         Padding(
-                          padding: const EdgeInsets.only(top: 13.0),
+                          padding: const EdgeInsets.only(top: 5.0),
                           child: TextFormField(
                             keyboardType: TextInputType.text,
                             controller: _lastNameController,
@@ -73,7 +73,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                             decoration: const InputDecoration(
                               hintText: 'Last Name',
-                              hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                              hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                             ),
                           ),
@@ -91,7 +91,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           style: const TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
                           decoration: const InputDecoration(
                             hintText: 'Email or Phone Number',
-                            hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                            hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                           ),
                         ),
@@ -110,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: const InputDecoration(
                             suffixIcon: Icon(Icons.seventeen_mp),
                             hintText: 'Password',
-                            hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                            hintStyle: TextStyle(fontSize: 13,color: Colors.black,),
 
                           ),
                         ),
@@ -128,7 +128,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: const InputDecoration(
                             suffixIcon: Icon(Icons.seventeen_mp),
                             hintText: 'Confirm Password',
-                            hintStyle:  TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),
+                            hintStyle:  TextStyle(fontSize: 13,color: Colors.black,),
 
                           ),
                         ),
@@ -137,14 +137,14 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     ),
                   ),
-                  const SizedBox(height: 60,),
+                   SizedBox(height: MediaQuery.of(context).size.height/10,),
                   InkWell(
                     onTap: (){
                       _formKey.currentState!.validate();
                       Navigator.push(context,MaterialPageRoute(builder: (builder)=>const OtpVerify()));
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 20.0),
+                      padding: const EdgeInsets.only(bottom: 10.0),
                       child: Center(
                         child: Container(
                           height: 60,
@@ -164,7 +164,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 25.0,bottom: 20),
+                    padding: const EdgeInsets.only(top: 15.0,bottom: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children:  [
@@ -194,9 +194,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
 
                 ],
-              )
-
-      ),
+              ),
+            ),
           ),
       ),
     );
